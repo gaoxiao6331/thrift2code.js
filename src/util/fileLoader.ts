@@ -1,9 +1,15 @@
 import { promises as fs } from "fs";
 import { resolve } from "path";
 import { throwError } from "./error";
+import { homedir } from "os";
 
-async function readFileContent(filePath: string): Promise<string> {
-  const absolutePath = resolve(filePath);
+export async function readFileContent(filePath: string): Promise<string> {
+  let absolutePath = resolve(filePath);
+
+  // 替换 ~ 为用户主目录
+  if (filePath.startsWith("~")) {
+    absolutePath = filePath.replace("~", homedir());
+  }
 
   try {
     return await fs.readFile(absolutePath, "utf-8");
