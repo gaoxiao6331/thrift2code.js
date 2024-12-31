@@ -18,11 +18,11 @@
   "dependencies": {
     "@creditkarma/thrift-parser": "^2.0.0",
     "axios": "^1.7.9",
-    "chai": "^5.1.2",
+    "chalk": "^5.4.1",
+    "dayjs": "^1.11.13",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@types/chai": "^5.0.1",
     "@types/node": "^22.10.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
