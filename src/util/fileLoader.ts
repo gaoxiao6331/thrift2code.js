@@ -3,7 +3,7 @@ import { resolve } from "path";
 import { throwError } from "./error";
 import { homedir } from "os";
 
-export async function readFileContent(filePath: string): Promise<string> {
+export async function readFileContent(filePath: string) {
   let absolutePath = resolve(filePath);
 
   // 替换 ~ 为用户主目录
@@ -13,7 +13,7 @@ export async function readFileContent(filePath: string): Promise<string> {
 
   try {
     return await fs.readFile(absolutePath, "utf-8");
-  } catch (error) {
+  } catch (error: any) {
     if (error.code === "ENOENT") {
       throwError(`File not found: ${absolutePath}`);
     } else if (error.code === "EACCES") {
