@@ -1,5 +1,4 @@
 import { readFileContent } from "@/util/fileLoader";
-import { defaultLogger } from "@/util/log";
 
 const grammar = `namespace js example // JavaScript 命名空间
 namespace py example // Python 命名空间
@@ -64,7 +63,6 @@ struct ComplexData {
 }`;
 
 describe("fileLoader", () => {
-  defaultLogger.info("start");
   it("should equal", async () => {
     const grammar1 = await readFileContent("./test/util/grammar.thrift"); // 相对jest的执行路径
     expect(grammar1).toEqual(grammar);
