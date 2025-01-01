@@ -7,9 +7,11 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@test/*": ["test/*"]
     },
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "allowJs": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
