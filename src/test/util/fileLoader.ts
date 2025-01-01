@@ -1,4 +1,4 @@
-import { readFileContent } from "../../util/fileLoader";
+import { readFileContent } from "@/util/fileLoader";
 
 (async function readGrammar() {
   const grammar1 = await readFileContent("./grammar.thrift");
